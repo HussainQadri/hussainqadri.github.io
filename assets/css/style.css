@@ -1,0 +1,38 @@
+body {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: Georgia, serif;
+  line-height: 1.65;
+  color: #111;
+  background: #fff;
+}
+
+.site-nav {
+  margin-bottom: 56px;
+}
+
+.site-nav a {
+  margin-right: 18px;
+  color: #111;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  text-decoration: underline;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+  font-weight: normal;
+}
+
+ul.clean-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul.clean-list li {
+  margin-bottom: 18px;
+}
