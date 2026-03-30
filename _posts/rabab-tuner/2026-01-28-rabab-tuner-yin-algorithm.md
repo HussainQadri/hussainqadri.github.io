@@ -3,6 +3,7 @@ title: "Rabab Tuner: Understanding the YIN Algorithm"
 date: 2026-01-28
 project: rabab-tuner
 ---
+Date: 2026-01-28
 
 I have started implementing YIN in `tuner_core.py`, but before doing so in the main project I needed a prototype that worked with artificial noisy signals and WAV audio files.
 

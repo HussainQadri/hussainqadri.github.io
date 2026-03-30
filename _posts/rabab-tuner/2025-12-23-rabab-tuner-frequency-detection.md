@@ -3,6 +3,7 @@ title: "Rabab Tuner: Change of Frequency Detection Algorithm"
 date: 2025-12-23
 project: rabab-tuner
 ---
+Date: 2025-12-23
 
 My initial implementation of the Rabab tuner used FFT, and it felt like the obvious starting point. Now that I have it somewhat functioning, I notice how inaccurate FFT is for real, imperfect audio samples.
 
