@@ -6,5 +6,12 @@ permalink: /essays/
 <h1>Essays</h1>
 
 <ul class="clean-list">
-  <li><strong>No essays yet.</strong></li>
+  {% for post in site.posts %}
+    <li>
+      <strong><a href="{{ post.url | relative_url }}">{{ post.title }}</a></strong><br>
+      <small>{{ post.date | date: "%B %-d, %Y" }}</small>
+    </li>
+  {% else %}
+    <li><strong>No essays yet.</strong></li>
+  {% endfor %}
 </ul>

@@ -5,17 +5,13 @@ permalink: /projects/
 
 <h1>Projects</h1>
 
+{% assign sorted_projects = site.projects | sort: "order" %}
+
 <ul class="clean-list">
-  <li>
-    <strong>FIX Parser</strong><br>
-    A C++ FIX message parser focused on correctness, validation, and protocol learning.
-  </li>
-  <li>
-    <strong>Rabab Tuner</strong><br>
-    A browser-based tuner using recorded audio and frequency detection.
-  </li>
-  <li>
-    <strong>EncodeEd</strong><br>
-    A compression visualisation project for algorithms like Huffman and LZ77.
-  </li>
+  {% for project in sorted_projects %}
+    <li>
+      <strong><a href="{{ project.url | relative_url }}">{{ project.title }}</a></strong><br>
+      {{ project.summary }}
+    </li>
+  {% endfor %}
 </ul>

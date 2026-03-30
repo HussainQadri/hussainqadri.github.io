@@ -1,0 +1,25 @@
+# Jekyll build output and cache
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# Ruby/Bundler local dependencies
+.bundle/
+vendor/bundle/
+
+# Local environment files
+.env
+.env.*
+
+# Editor/IDE local settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
