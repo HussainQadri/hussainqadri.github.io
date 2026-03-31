@@ -5,6 +5,8 @@
   --muted: #b7ab9a;
   --link: #f0c674;
   --link-hover: #ffe0a6;
+  --font-body: "Literata", Georgia, serif;
+  --font-ui: "Work Sans", sans-serif;
 }
 
 html {
@@ -15,7 +17,7 @@ body {
   max-width: 720px;
   margin: 40px auto;
   padding: 0 20px;
-  font-family: Georgia, serif;
+  font-family: var(--font-body);
   line-height: 1.65;
   color: var(--text);
   background: var(--bg);
@@ -44,9 +46,12 @@ a:hover {
   text-decoration: underline;
 }
 
+.site-nav,
+.site-nav a,
 .content h1,
 .content h2,
 .content h3 {
+  font-family: var(--font-ui);
   font-weight: normal;
 }
 
