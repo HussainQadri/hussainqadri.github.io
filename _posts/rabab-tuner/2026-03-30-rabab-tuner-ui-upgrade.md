@@ -3,11 +3,11 @@ title: "Upgrading the UI"
 date: 2026-03-30
 project: rabab-tuner
 ---
-## The problem
+### The problem
 
 I am building a tuner, yet the UI is bloated with colours and fancy live waveform. It looks modern, but it doesn't capture the essence of what I am trying to create. A simple tuner, that can tune a rabab to the bilawal scale.
 
-## Making the UI more approachable
+### Making the UI more approachable
 
 The landing page shouldn't take you to a screen that says "Let's get your rabab tuned", this doesn't make sense at all. The user is already here to get their rabab tuned, adding a button that takes them to the tuner afterwards is just redundant.
 

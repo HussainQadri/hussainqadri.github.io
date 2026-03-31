@@ -16,7 +16,7 @@ A compression visualisation project for algorithms like Huffman and LZ77.
 {% if project_posts.size > 0 %}
   {% assign project_posts_reversed = project_posts | reverse %}
   {% for post in project_posts_reversed %}
-### {{ post.title }}
+## {{ post.title }}
 <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
 
 {{ post.content }}

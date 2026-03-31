@@ -3,7 +3,7 @@ title: "FIX Engine: First Update"
 date: 2026-03-30
 project: fix-engine
 ---
-## My thinking
+### My thinking
 
 At the moment, the project needs basic parsing so that it can split into tag value pairs, with basic error detection such as verifying body length and checksum
 
@@ -42,4 +42,3 @@ Integrate the real dictionary model from `FIX42.xml`:
 - Parse `<fields>` and `<messages>` into in-memory maps.
 - Implement `isValidTag`, `isValidMsgType`, and `getFieldName`.
 - Add dictionary-aware validation on top of current checksum/body-length validation.
-
