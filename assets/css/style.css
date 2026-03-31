@@ -64,3 +64,13 @@ ul.clean-list li {
   margin-bottom: 18px;
   color: var(--muted);
 }
+
+/* --- Gallery page --- */
+
+.gallery-page img,
+.gallery-page video {
+  display: block;
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
