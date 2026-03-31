@@ -3,8 +3,6 @@ title: "Upgrading the UI"
 date: 2026-03-30
 project: rabab-tuner
 ---
-Date: 2026-03-30
-
 ## The problem
 
 I am building a tuner, yet the UI is bloated with colours and fancy live waveform. It looks modern, but it doesn't capture the essence of what I am trying to create. A simple tuner, that can tune a rabab to the bilawal scale.

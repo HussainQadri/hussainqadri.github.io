@@ -3,8 +3,6 @@ title: "Rabab Tuner: Understanding the YIN Algorithm"
 date: 2026-01-28
 project: rabab-tuner
 ---
-Date: 2026-01-28
-
 I have started implementing YIN in `tuner_core.py`, but before doing so in the main project I needed a prototype that worked with artificial noisy signals and WAV audio files.
 
 YIN fundamentally builds on ACF and adapts it into a difference function. When expanded and simplified, the difference function can be written using ACF terms, which makes implementation easier. But why switch to the difference function at all? ACF can prefer a lag that is too low, because small lags can maximize similarity between lagged and original signals.

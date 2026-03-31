@@ -3,7 +3,6 @@ title: "FIX Engine: First Update"
 date: 2026-03-30
 project: fix-engine
 ---
-Date: 2026-03-30
 ## My thinking
 
 At the moment, the project needs basic parsing so that it can split into tag value pairs, with basic error detection such as verifying body length and checksum

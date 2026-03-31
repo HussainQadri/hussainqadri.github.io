@@ -70,6 +70,14 @@ ul.clean-list li {
   color: var(--muted);
 }
 
+/* --- Post date --- */
+
+.post-date {
+  color: var(--muted);
+  font-family: var(--font-ui);
+  font-size: 0.9em;
+}
+
 /* --- Gallery page --- */
 
 .gallery-page img,
