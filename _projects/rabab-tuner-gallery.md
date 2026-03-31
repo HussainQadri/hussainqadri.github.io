@@ -1,6 +1,7 @@
 ---
 title: Rabab Tuner Gallery
 permalink: /projects/rabab-tuner/gallery/
+listed: false
 ---
 
 # Rabab Tuner Gallery

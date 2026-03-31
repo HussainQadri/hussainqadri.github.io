@@ -5,7 +5,8 @@ permalink: /projects/
 
 <h1>Projects</h1>
 
-{% assign sorted_projects = site.projects | sort: "order" %}
+{% assign visible_projects = site.projects | where_exp: "project", "project.listed != false" %}
+{% assign sorted_projects = visible_projects | sort: "order" %}
 
 <ul class="clean-list">
   {% for project in sorted_projects %}
