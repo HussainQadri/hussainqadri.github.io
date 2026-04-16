@@ -1,6 +1,9 @@
 title: Hussain Qadri
 description: Projects, notes, and things I am working on
 
+markdown: kramdown
+highlighter: rouge
+
 collections:
   projects:
     output: true

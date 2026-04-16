@@ -70,6 +70,29 @@ ul.clean-list li {
   color: var(--muted);
 }
 
+/* --- Code blocks --- */
+
+pre {
+  background: #1e1e1e;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+code {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.9em;
+}
+
+:not(pre) > code {
+  background: #1e1e1e;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #f0c674;
+}
+
 /* --- Post date --- */
 
 .post-date {
