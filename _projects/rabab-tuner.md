@@ -20,8 +20,7 @@ When I was spending time with my teacher learning this instrument, I noticed how
 
 {% assign project_posts = site.posts | where_exp: "post", "post.project == page.project" %}
 {% if project_posts.size > 0 %}
-  {% assign project_posts_reversed = project_posts | reverse %}
-  {% for post in project_posts_reversed %}
+  {% for post in project_posts %}
 ## {{ post.title }}
 <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
 
