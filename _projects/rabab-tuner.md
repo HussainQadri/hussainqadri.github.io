@@ -25,6 +25,7 @@ When I was spending time with my teacher learning this instrument, I noticed how
 <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
 
 {{ post.content }}
+{% unless forloop.last %}<hr class="post-separator">{% endunless %}
   {% endfor %}
 {% else %}
 <p>No updates yet.</p>

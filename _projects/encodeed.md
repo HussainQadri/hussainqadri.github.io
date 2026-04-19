@@ -19,6 +19,7 @@ A compression visualisation project for algorithms like Huffman and LZ77.
 <span class="post-date">{{ post.date | date: "%d %b %Y" }}</span>
 
 {{ post.content }}
+{% unless forloop.last %}<hr class="post-separator">{% endunless %}
   {% endfor %}
 {% else %}
 <p>No updates yet.</p>
