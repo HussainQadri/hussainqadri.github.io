@@ -1,0 +1,29 @@
+---
+title: Side-quests
+permalink: /side-quests/
+---
+
+<h1>Side-quests</h1>
+
+{% assign visible = site.side_quests | where_exp: "q", "q.listed != false" %}
+{% assign sorted = visible | sort: "order" | reverse %}
+
+{% if sorted == empty %}
+  <p>Nothing yet.</p>
+{% else %}
+  <div class="card-grid">
+    {% for q in sorted %}
+      <a class="card" href="{{ q.url | relative_url }}">
+        {% if q.image %}
+          <img src="{{ q.image | relative_url }}" alt="{{ q.title }}">
+        {% else %}
+          <div class="card-img-placeholder"></div>
+        {% endif %}
+        <div class="card-body">
+          <strong>{{ q.title }}</strong>
+          {% if q.summary %}<p>{{ q.summary }}</p>{% endif %}
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}

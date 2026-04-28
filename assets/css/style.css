@@ -108,6 +108,61 @@ code {
   margin: 56px 0;
 }
 
+/* --- Card grid (side-quests) --- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+@media (max-width: 540px) {
+  .card-grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  display: block;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1a1a1a;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.card:hover {
+  border-color: var(--link);
+  transform: translateY(-2px);
+}
+
+.card img,
+.card-img-placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #2a2a2a;
+}
+
+.card-body {
+  padding: 14px 16px 18px;
+  font-family: var(--font-ui);
+}
+
+.card-body strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.card-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92em;
+  line-height: 1.45;
+}
+
 /* --- Gallery page --- */
 
 .gallery-page img,

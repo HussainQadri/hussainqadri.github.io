@@ -7,6 +7,9 @@ highlighter: rouge
 collections:
   projects:
     output: true
+  side_quests:
+    output: true
+    permalink: /side-quests/:path/
 
 defaults:
   - scope:
@@ -22,5 +25,10 @@ defaults:
   - scope:
       path: ""
       type: "projects"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "side_quests"
     values:
       layout: "default"
