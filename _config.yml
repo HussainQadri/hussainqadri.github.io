@@ -31,4 +31,4 @@ defaults:
       path: ""
       type: "side_quests"
     values:
-      layout: "default"
+      layout: "side_quest"

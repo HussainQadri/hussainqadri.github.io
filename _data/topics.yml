@@ -1,0 +1,19 @@
+tools:
+  label: Tools
+  accent: "#a6e3a1"
+
+notes:
+  label: Notes
+  accent: "#89b4fa"
+
+draft:
+  label: Draft
+  accent: "#f0c674"
+
+writing:
+  label: Writing
+  accent: "#94e2d5"
+
+books:
+  label: Books
+  accent: "#d4a373"

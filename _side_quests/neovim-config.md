@@ -2,10 +2,10 @@
 title: My Neovim setup
 summary: How I moved from IDEs to LazyVim, then slowly ended up with my own small config.
 image: /images/neovim-dashboard.png
-order: 1
+topic: tools
+date: 2026-04-27
+pinned: true
 ---
-
-# My Neovim setup
 
 I originally got interested in Neovim because I wanted to use the mouse less while writing code.
 

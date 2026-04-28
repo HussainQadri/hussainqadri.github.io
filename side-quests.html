@@ -6,20 +6,38 @@ permalink: /side-quests/
 <h1>Side-quests</h1>
 
 {% assign visible = site.side_quests | where_exp: "q", "q.listed != false" %}
-{% assign sorted = visible | sort: "order" | reverse %}
+{% assign pinned = visible | where: "pinned", true | sort: "date" | reverse %}
+{% assign rest = visible | where_exp: "q", "q.pinned != true" | sort: "date" | reverse %}
+{% assign sorted = pinned | concat: rest %}
 
 {% if sorted == empty %}
   <p>Nothing yet.</p>
 {% else %}
   <div class="card-grid">
     {% for q in sorted %}
-      <a class="card" href="{{ q.url | relative_url }}">
+      {% assign topic = site.data.topics[q.topic] %}
+      {% assign accent = topic.accent | default: '#f0c674' %}
+      {% assign label = topic.label | default: q.topic %}
+      {% assign span = q.span %}
+      {% unless span %}
+        {% assign mod = forloop.index | modulo: 7 %}
+        {% if mod == 1 %}
+          {% assign span = 'wide' %}
+        {% else %}
+          {% assign last_wide = forloop.index | minus: 1 | divided_by: 7 | times: 7 | plus: 1 %}
+          {% assign tail = forloop.index | minus: last_wide %}
+          {% assign tail_mod = tail | modulo: 2 %}
+          {% if forloop.last and tail_mod == 1 %}{% assign span = 'wide' %}{% endif %}
+        {% endif %}
+      {% endunless %}
+      <a class="card{% if span %} card-{{ span }}{% endif %}" href="{{ q.url | relative_url }}" style="--card-accent: {{ accent }}">
         {% if q.image %}
           <img src="{{ q.image | relative_url }}" alt="{{ q.title }}">
         {% else %}
           <div class="card-img-placeholder"></div>
         {% endif %}
         <div class="card-body">
+          {% if label %}<span class="card-topic">{{ label }}</span>{% endif %}
           <strong>{{ q.title }}</strong>
           {% if q.summary %}<p>{{ q.summary }}</p>{% endif %}
         </div>
