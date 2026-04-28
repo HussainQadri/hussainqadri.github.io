@@ -3,6 +3,9 @@ title: Rabab Tuner
 permalink: /projects/rabab-tuner/
 project: rabab-tuner
 summary: "A real-time browser-based tuner for the Rabab, built with React and Python/Flask. The frontend captures live microphone audio via the Web Audio API and streams ~200ms PCM chunks over WebSockets to a backend running a custom YIN pitch detection algorithm. The engine calculates cent-deviation against the Sargam scale, manages backpressure to prevent frame drops, and drives an analog-style gauge UI with cent-level precision."
+image: /images/rabab-wireframe.png
+stack: React + Flask
+accent: "#94e2d5"
 order: 2
 ---
 

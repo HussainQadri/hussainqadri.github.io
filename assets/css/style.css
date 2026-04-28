@@ -27,6 +27,10 @@ body.side-quest-index-page {
   max-width: 840px;
 }
 
+body.projects-index-page {
+  max-width: 840px;
+}
+
 body.layout-side_quest {
   max-width: 800px;
 }
@@ -76,6 +80,113 @@ ul.clean-list {
 ul.clean-list li {
   margin-bottom: 18px;
   color: var(--muted);
+}
+
+/* --- Project grid --- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 34px;
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid rgba(240, 198, 116, 0.16);
+  border-radius: 8px;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0)),
+    #181818;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, var(--project-accent, var(--link)), transparent 34%);
+  opacity: 0.08;
+}
+
+.project-card:hover {
+  border-color: var(--project-accent, var(--link));
+  box-shadow: 0 22px 58px rgba(0, 0, 0, 0.32);
+  transform: translateY(-3px);
+}
+
+.project-card img,
+.project-card-placeholder {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  place-items: center;
+  overflow: hidden;
+  object-fit: cover;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0)),
+    #202020;
+  transition: transform 0.22s;
+}
+
+.project-card:hover img,
+.project-card:hover .project-card-placeholder {
+  transform: scale(1.025);
+}
+
+.project-card-placeholder span {
+  color: var(--project-accent, var(--link));
+  font-family: var(--font-ui);
+  font-size: 3.2em;
+  line-height: 1;
+  opacity: 0.75;
+}
+
+.project-card-body {
+  position: relative;
+  flex: 1;
+  padding: 16px 18px 20px;
+  font-family: var(--font-ui);
+}
+
+.project-card-topic {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--project-accent, var(--link));
+  font-size: 0.72em;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-card-body strong {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 1.06em;
+  line-height: 1.25;
+}
+
+.project-card-body p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  color: var(--muted);
+  font-size: 0.92em;
+  line-height: 1.45;
+}
+
+@media (max-width: 540px) {
+  .project-grid { grid-template-columns: 1fr; }
 }
 
 /* --- Code blocks --- */

@@ -8,11 +8,21 @@ permalink: /projects/
 {% assign visible_projects = site.projects | where_exp: "project", "project.listed != false" %}
 {% assign sorted_projects = visible_projects | sort: "order" %}
 
-<ul class="clean-list">
+<div class="project-grid">
   {% for project in sorted_projects %}
-    <li>
-      <strong><a href="{{ project.url | relative_url }}">{{ project.title }}</a></strong><br>
-      {{ project.summary }}
-    </li>
+    <a class="project-card{% if project.span %} project-card-{{ project.span }}{% endif %}" href="{{ project.url | relative_url }}" style="--project-accent: {{ project.accent | default: '#f0c674' }}">
+      {% if project.image %}
+        <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+      {% else %}
+        <div class="project-card-placeholder">
+          <span>{{ project.title | slice: 0 }}</span>
+        </div>
+      {% endif %}
+      <div class="project-card-body">
+        {% if project.stack %}<span class="project-card-topic">{{ project.stack }}</span>{% endif %}
+        <strong>{{ project.title }}</strong>
+        {% if project.summary %}<p>{{ project.summary }}</p>{% endif %}
+      </div>
+    </a>
   {% endfor %}
-</ul>
+</div>
