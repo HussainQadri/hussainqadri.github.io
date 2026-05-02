@@ -2,7 +2,7 @@
 title: EncodeEd
 permalink: /projects/encodeed/
 project: encodeed
-image: /images/encoded-ui.png
+image: /images/encodeed-card.svg
 summary: A compression visualisation project for algorithms like Huffman and LZ77.
 stack: Algorithms
 accent: "#89b4fa"
