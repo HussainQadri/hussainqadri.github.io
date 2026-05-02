@@ -44,11 +44,19 @@ a:hover {
 }
 
 .site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 56px;
 }
 
+.site-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
 .site-nav a {
-  margin-right: 18px;
   color: var(--text);
   text-decoration: none;
 }
@@ -58,7 +66,25 @@ a:hover {
   text-decoration: underline;
 }
 
+.site-nav .nav-icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--muted);
+}
+
+.site-nav .nav-icon:hover {
+  color: var(--link-hover);
+  text-decoration: none;
+}
+
+.site-nav .nav-icon svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
 .site-nav,
+.site-nav-links,
 .site-nav a,
 .content h1,
 .content h2,
