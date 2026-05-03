@@ -3,7 +3,7 @@ title: EncodeEd
 permalink: /projects/encodeed/
 project: encodeed
 image: /images/encodeed-card.png
-summary: A compression visualisation project for algorithms like Huffman and LZ77.
+summary: EncodeEd is an interactive compression visualiser that helps users understand how algorithms such as Huffman coding, LZ77, LZW, Shannon-Fano, RLE, and Arithmetic Coding encode data, explain their outputs, and compare runtime behaviour through visualisations and complexity sampling.
 stack: Algorithms
 accent: "#89b4fa"
 order: 3
