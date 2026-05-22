@@ -2,9 +2,10 @@
 title: Sift
 permalink: /projects/sift/
 project: sift
+image: /images/sift-card.png
 summary: "A Rust semantic code search CLI that uses Tree-sitter to extract functions, embeds code with a pretrained model, and ranks functions against natural-language queries with vector similarity."
 stack: Rust
-accent: "#a6e3a1"
+accent: "#dea584"
 order: 4
 ---
 
