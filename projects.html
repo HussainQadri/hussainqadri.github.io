@@ -6,7 +6,9 @@ permalink: /projects/
 <h1>Projects</h1>
 
 {% assign visible_projects = site.projects | where_exp: "project", "project.listed != false" %}
-{% assign sorted_projects = visible_projects | sort: "order" %}
+{% assign pinned_projects = visible_projects | where: "pinned", true | sort: "order" %}
+{% assign other_projects = visible_projects | where_exp: "project", "project.pinned != true" | sort: "order" %}
+{% assign sorted_projects = pinned_projects | concat: other_projects %}
 
 <div class="project-grid">
   {% for project in sorted_projects %}

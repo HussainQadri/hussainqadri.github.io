@@ -7,6 +7,7 @@ summary: "A Rust semantic code search CLI that uses Tree-sitter to extract funct
 stack: Rust
 accent: "#dea584"
 order: 4
+pinned: true
 ---
 
 # Sift
