@@ -15,12 +15,12 @@ permalink: /
   <div class="home-hero-copy">
     <h1>Hussain Qadri</h1>
     <p class="home-dek">Systems, software, and side projects.</p>
-    <p class="home-intro">I am a computer science student interested in systems, finance, developer tools, and technical side projects.</p>
+    <p class="home-intro">I am a Computer Science student at King's College London interested in systems programming, developer tools, information retrieval, and building technical projects from first principles.</p>
 
-    <dl class="current-work" aria-label="Currently building">
-      <div><dt>open source</dt><dd>Linux kernel patches</dd></div>
-      <div><dt>systems</dt><dd>A FIX 4 protocol engine in C++</dd></div>
-      <div><dt>quant tools</dt><dd>Black-Scholes pricing and Greek surfaces</dd></div>
+    <dl class="current-work" aria-label="Current focus">
+      <div><dt>search</dt><dd>Sift in Rust with Tree-sitter and a custom HNSW index</dd></div>
+      <div><dt>protocols</dt><dd>A C++ FIX 4.2 engine with validation and session state</dd></div>
+      <div><dt>audio</dt><dd>A browser-based rabab tuner using YIN and streamed PCM</dd></div>
     </dl>
 
     <div class="hero-links">
