@@ -31,18 +31,18 @@
 }
 
 :root {
-  color-scheme: light;
-  --paper: #f1eadc;
-  --paper-bright: #f8f3e9;
-  --paper-deep: #e8deca;
-  --ink: #1c1a17;
-  --ink-soft: #403a34;
-  --muted: #71675d;
-  --line: #cdbda3;
-  --line-strong: #aa987e;
-  --blue: #275f78;
-  --rust: #a74d39;
-  --gold: #9a6b22;
+  color-scheme: dark;
+  --paper: #151513;
+  --paper-bright: #1c1b18;
+  --paper-deep: #24221d;
+  --ink: #eee8dc;
+  --ink-soft: #d0c7b8;
+  --muted: #9d9386;
+  --line: #37342e;
+  --line-strong: #575147;
+  --blue: #8fb8c6;
+  --rust: #cf8069;
+  --gold: #c6a464;
   --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans: "Work Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
@@ -69,8 +69,8 @@ body {
   color: var(--ink);
   background-color: var(--paper);
   background-image:
-    linear-gradient(rgba(28, 26, 23, .032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(28, 26, 23, .032) 1px, transparent 1px);
+    linear-gradient(rgba(238, 232, 220, .027) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(238, 232, 220, .027) 1px, transparent 1px);
   background-size: 48px 48px;
   font-family: var(--serif);
   font-size: 18px;
@@ -85,12 +85,12 @@ body::before {
   content: "";
   pointer-events: none;
   opacity: .22;
-  background-image: radial-gradient(rgba(28, 26, 23, .22) .55px, transparent .55px);
+  background-image: radial-gradient(rgba(238, 232, 220, .16) .55px, transparent .55px);
   background-size: 13px 13px;
 }
 
 ::selection {
-  color: var(--paper-bright);
+  color: #111310;
   background: var(--blue);
 }
 
@@ -383,20 +383,20 @@ h3 {
   display: block;
   border: 1px solid var(--line-strong);
   background: var(--paper-bright);
-  box-shadow: 0 18px 42px rgba(47, 38, 28, .12);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, .24);
   overflow: hidden;
 }
 
 .artifact img {
   width: 100%;
   object-fit: cover;
-  filter: saturate(.88) contrast(.98);
+  filter: saturate(.78) brightness(.84) contrast(1.03);
   transition: transform .5s var(--ease), filter .4s ease;
 }
 
 .artifact a:hover img {
   transform: scale(1.018);
-  filter: saturate(1) contrast(1);
+  filter: saturate(.92) brightness(.94) contrast(1.02);
 }
 
 .artifact figcaption {
@@ -477,13 +477,13 @@ h3 {
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  filter: saturate(.88);
+  filter: saturate(.78) brightness(.84);
   transition: transform .5s var(--ease), filter .4s ease;
 }
 
 .featured-writing-image:hover img {
   transform: scale(1.018);
-  filter: saturate(1);
+  filter: saturate(.94) brightness(.95);
 }
 
 .featured-writing-project,
@@ -596,13 +596,13 @@ h3 {
   border: 1px solid var(--line-strong);
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  filter: saturate(.86);
+  filter: saturate(.76) brightness(.83);
   transition: transform .45s var(--ease), filter .35s ease;
 }
 
 .project-feature:hover img {
   transform: translateY(-3px);
-  filter: saturate(1);
+  filter: saturate(.92) brightness(.94);
 }
 
 .project-feature h3,
@@ -644,7 +644,7 @@ h3 {
   border: 1px solid var(--line-strong);
   object-fit: cover;
   object-position: center 32%;
-  filter: saturate(.72) sepia(.08);
+  filter: saturate(.62) sepia(.08) brightness(.76);
 }
 
 .home-personal figcaption {
@@ -696,12 +696,12 @@ h3 {
   border: 1px solid var(--line-strong);
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  filter: saturate(.8);
+  filter: saturate(.72) brightness(.82);
   transition: filter .3s ease, transform .45s var(--ease);
 }
 
 .quest-feature:hover img {
-  filter: saturate(1);
+  filter: saturate(.92) brightness(.94);
   transform: translateY(-3px);
 }
 
@@ -780,14 +780,14 @@ h3 {
   aspect-ratio: 16 / 10;
   object-fit: cover;
   background: var(--paper-deep);
-  filter: saturate(.82);
+  filter: saturate(.72) brightness(.82);
   transition: transform .45s var(--ease), filter .3s ease;
 }
 
 .project-card:hover img,
 .card:hover img {
   transform: translateY(-3px);
-  filter: saturate(1);
+  filter: saturate(.92) brightness(.94);
 }
 
 .project-card-placeholder,
@@ -861,7 +861,7 @@ h3 {
   border: 1px solid var(--line-strong);
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  filter: saturate(.86);
+  filter: saturate(.76) brightness(.84);
 }
 
 .project-page-art figcaption {
@@ -920,7 +920,7 @@ h3 {
   border: 1px solid var(--line-strong);
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  filter: saturate(.8);
+  filter: saturate(.72) brightness(.82);
 }
 
 .adjacent-updates {
@@ -1085,13 +1085,13 @@ pre,
   max-width: 100%;
   margin: 1.8rem 0 2.2rem;
   border: 1px solid var(--line);
-  background: rgba(232, 222, 202, .68);
+  background: rgba(36, 34, 29, .88);
   overflow-x: auto;
 }
 
 pre {
   padding: 1.1rem 1.25rem;
-  color: #292721;
+  color: #ded7ca;
   font: .78rem/1.62 var(--mono);
   tab-size: 2;
 }
@@ -1109,8 +1109,8 @@ code {
 
 :not(pre) > code {
   padding: .08em .28em;
-  color: #70452c;
-  background: rgba(205, 189, 163, .36);
+  color: #e0ad8d;
+  background: rgba(143, 184, 198, .11);
 }
 
 .post-date {
@@ -1155,7 +1155,7 @@ code {
   border: 1px solid var(--line-strong);
   aspect-ratio: 16 / 11;
   object-fit: cover;
-  filter: saturate(.8);
+  filter: saturate(.7) brightness(.8);
 }
 
 .side-quest-heading {
