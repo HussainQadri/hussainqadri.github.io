@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+{% assign project_page = site.projects | where: "project", page.project | first %}
+{% assign project_posts = site.posts | where: "project", page.project | sort: "date" | reverse %}
+
+<article class="post-page">
+  <aside class="post-context" data-reveal>
+    {% if project_page %}
+      <a class="back-link" href="{{ project_page.url | relative_url }}">Back to {{ project_page.title }}</a>
+      {% if project_page.image %}
+        <img class="post-context-image" src="{{ project_page.image | relative_url }}" alt="{{ project_page.title }} project preview">
+      {% endif %}
+      {% if project_page.summary %}<p>{{ project_page.summary }}</p>{% endif %}
+    {% endif %}
+
+    {% if project_posts.size > 1 %}
+      <div class="adjacent-updates">
+        <h2>More {{ project_page.title | default: page.project }} updates</h2>
+        <ol>
+          {% for update in project_posts limit: 5 %}
+            <li{% if update.url == page.url %} aria-current="page"{% endif %}>
+              <a href="{{ update.url | relative_url }}">{{ update.title }}</a>
+              <time datetime="{{ update.date | date_to_xmlschema }}">{{ update.date | date: "%d %b %Y" }}</time>
+            </li>
+          {% endfor %}
+        </ol>
+      </div>
+    {% endif %}
+  </aside>
+
+  <div class="post-prose">
+    <header class="post-header" data-reveal>
+      {% if project_page %}<a class="post-mobile-back back-link" href="{{ project_page.url | relative_url }}">Back to {{ project_page.title }}</a>{% endif %}
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%d %b %Y" }}</time>
+        {% if project_page %}<a href="{{ project_page.url | relative_url }}">{{ project_page.title }}</a>{% endif %}
+      </div>
+      <h1>{{ page.title }}</h1>
+    </header>
+    {{ content }}
+  </div>
+</article>

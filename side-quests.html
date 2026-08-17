@@ -3,7 +3,11 @@ title: Side-quests
 permalink: /side-quests/
 ---
 
-<h1>Side-quests</h1>
+<header class="archive-header" data-reveal>
+  <p>Side-quests</p>
+  <h1>Projects beyond the main thread.</h1>
+  <div class="archive-intro">Tools, books, workflows, and other interests worth following for a while.</div>
+</header>
 
 {% assign visible = site.side_quests | where_exp: "q", "q.listed != false" %}
 {% assign pinned = visible | where: "pinned", true | sort: "date" | reverse %}
@@ -32,7 +36,7 @@ permalink: /side-quests/
       {% endunless %}
       <a class="card{% if span %} card-{{ span }}{% endif %}" href="{{ q.url | relative_url }}" style="--card-accent: {{ accent }}">
         {% if q.image %}
-          <img src="{{ q.image | relative_url }}" alt="{{ q.title }}">
+          <img src="{{ q.image | relative_url }}" alt="{{ q.title }} preview">
         {% else %}
           <div class="card-img-placeholder"></div>
         {% endif %}

@@ -4,16 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500&family=Work+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="description" content="{{ page.summary | default: page.description | default: site.description | strip_html | normalize_whitespace | escape }}">
+    <meta name="theme-color" content="#f1eadc">
+    <link rel="preload" href="{{ '/assets/fonts/newsreader-regular.ttf' | relative_url }}" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}">
   </head>
-  <body class="layout-{{ page.layout | default: 'default' }}{% if page.url == '/side-quests/' %} side-quest-index-page{% endif %}{% if page.url == '/projects/' %} projects-index-page{% endif %}">
+  <body class="layout-{{ page.layout | default: 'default' }}{% if page.url == '/' %} home-page{% endif %}{% if page.url == '/side-quests/' %} side-quest-index-page archive-page{% endif %}{% if page.url == '/projects/' %} projects-index-page archive-page{% endif %}{% if page.collection == 'projects' and page.project %} project-detail-page{% endif %}">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     {% include nav.html %}
-    <main class="content">
-      {{ content }}
+    <main class="site-main" id="main-content">
+      {% if page.collection == 'projects' and page.project %}
+        <article class="project-page">
+          {% if page.image %}
+            <figure class="project-page-art" data-reveal>
+              <img src="{{ page.image | relative_url }}" alt="{{ page.title }} project preview">
+              {% if page.stack %}<figcaption>{{ page.stack }}</figcaption>{% endif %}
+            </figure>
+          {% endif %}
+          <div class="project-page-content">
+            {{ content }}
+          </div>
+        </article>
+      {% else %}
+        {{ content }}
+      {% endif %}
     </main>
+    {% include footer.html %}
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
   </body>
 </html>

@@ -3,7 +3,11 @@ title: Projects
 permalink: /projects/
 ---
 
-<h1>Projects</h1>
+<header class="archive-header" data-reveal>
+  <p>Projects</p>
+  <h1>Things I am building to understand.</h1>
+  <div class="archive-intro">Systems, developer tools, algorithms, and experiments built from first principles.</div>
+</header>
 
 {% assign visible_projects = site.projects | where_exp: "project", "project.listed != false" %}
 {% assign pinned_projects = visible_projects | where: "pinned", true | sort: "order" %}
@@ -14,7 +18,7 @@ permalink: /projects/
   {% for project in sorted_projects %}
     <a class="project-card{% if project.span %} project-card-{{ project.span }}{% endif %}" href="{{ project.url | relative_url }}" style="--project-accent: {{ project.accent | default: '#f0c674' }}">
       {% if project.image %}
-        <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+        <img src="{{ project.image | relative_url }}" alt="{{ project.title }} project preview">
       {% else %}
         <div class="project-card-placeholder">
           <span>{{ project.title | slice: 0 }}</span>
