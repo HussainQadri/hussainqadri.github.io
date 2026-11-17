@@ -90,7 +90,7 @@ permalink: /
     <ul>
       <li>I play the traditional Afghan rabab and hold Grade 6 in Music Theory.</li>
       <li>I hold HSK 3 certification in Mandarin and B1 in French.</li>
-      <li>I am an open-water certified scuba diver, and I love <a href="https://store.steampowered.com/app/1422450/Deadlock/">Deadlock</a>.</li>
+      <li>I am an open-water certified scuba diver.</li>
     </ul>
   </div>
 </section>
