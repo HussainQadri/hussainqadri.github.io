@@ -3,10 +3,9 @@ title: Side-quests
 permalink: /side-quests/
 ---
 
-<header class="archive-header" data-reveal>
-  <p>Side-quests</p>
-  <h1>Projects beyond the main thread.</h1>
-  <div class="archive-intro">Tools, books, workflows, and other interests worth following for a while.</div>
+<header class="archive-header">
+  <h1>Side-quests</h1>
+  <p>Tools, books, workflows, and other interests worth following for a while.</p>
 </header>
 
 {% assign visible = site.side_quests | where_exp: "q", "q.listed != false" %}
@@ -17,26 +16,13 @@ permalink: /side-quests/
 {% if sorted == empty %}
   <p>Nothing yet.</p>
 {% else %}
-  <div class="card-grid">
+  <div class="card-grid card-grid-3">
     {% for q in sorted %}
       {% assign topic = site.data.topics[q.topic] %}
-      {% assign accent = topic.accent | default: '#f0c674' %}
       {% assign label = topic.label | default: q.topic %}
-      {% assign span = q.span %}
-      {% unless span %}
-        {% assign mod = forloop.index | modulo: 7 %}
-        {% if mod == 1 %}
-          {% assign span = 'wide' %}
-        {% else %}
-          {% assign last_wide = forloop.index | minus: 1 | divided_by: 7 | times: 7 | plus: 1 %}
-          {% assign tail = forloop.index | minus: last_wide %}
-          {% assign tail_mod = tail | modulo: 2 %}
-          {% if forloop.last and tail_mod == 1 %}{% assign span = 'wide' %}{% endif %}
-        {% endif %}
-      {% endunless %}
-      <a class="card{% if span %} card-{{ span }}{% endif %}" href="{{ q.url | relative_url }}" style="--card-accent: {{ accent }}">
+      <a class="card" href="{{ q.url | relative_url }}">
         {% if q.image %}
-          <img src="{{ q.image | relative_url }}" alt="{{ q.title }} preview">
+          <img src="{{ q.image | relative_url }}" alt="{{ q.title }} preview" loading="lazy">
         {% else %}
           <div class="card-img-placeholder"></div>
         {% endif %}

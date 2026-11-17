@@ -10,10 +10,6 @@ layout: default
   <header class="side-quest-hero">
     <a class="side-quest-back" href="{{ '/side-quests/' | relative_url }}">Back to side-quests</a>
 
-    {% if page.image %}
-      <img class="side-quest-hero-img" src="{{ page.image | relative_url }}" alt="{{ page.title }}">
-    {% endif %}
-
     <div class="side-quest-heading">
       <div class="side-quest-meta">
         {% if label %}<span>{{ label }}</span>{% endif %}
@@ -24,6 +20,10 @@ layout: default
         <p class="side-quest-summary">{{ page.summary }}</p>
       {% endif %}
     </div>
+
+    {% if page.image %}
+      <img class="side-quest-hero-img" src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+    {% endif %}
   </header>
 
   <div class="side-quest-prose">

@@ -3,10 +3,9 @@ title: Projects
 permalink: /projects/
 ---
 
-<header class="archive-header" data-reveal>
-  <p>Projects</p>
-  <h1>Things I am building to understand.</h1>
-  <div class="archive-intro">Systems, developer tools, algorithms, and experiments built from first principles.</div>
+<header class="archive-header">
+  <h1>Projects</h1>
+  <p>Systems, developer tools, algorithms, and experiments built from first principles.</p>
 </header>
 
 {% assign visible_projects = site.projects | where_exp: "project", "project.listed != false" %}
@@ -14,18 +13,16 @@ permalink: /projects/
 {% assign other_projects = visible_projects | where_exp: "project", "project.pinned != true" | sort: "order" %}
 {% assign sorted_projects = pinned_projects | concat: other_projects %}
 
-<div class="project-grid">
+<div class="card-grid card-grid-2">
   {% for project in sorted_projects %}
-    <a class="project-card{% if project.span %} project-card-{{ project.span }}{% endif %}" href="{{ project.url | relative_url }}" style="--project-accent: {{ project.accent | default: '#f0c674' }}">
+    <a class="card" href="{{ project.url | relative_url }}">
       {% if project.image %}
-        <img src="{{ project.image | relative_url }}" alt="{{ project.title }} project preview">
+        <img src="{{ project.image | relative_url }}" alt="{{ project.title }} project preview" loading="lazy">
       {% else %}
-        <div class="project-card-placeholder">
-          <span>{{ project.title | slice: 0 }}</span>
-        </div>
+        <div class="card-img-placeholder"><span>{{ project.title | slice: 0 }}</span></div>
       {% endif %}
-      <div class="project-card-body">
-        {% if project.stack %}<span class="project-card-topic">{{ project.stack }}</span>{% endif %}
+      <div class="card-body">
+        {% if project.stack %}<span class="card-topic">{{ project.stack }}</span>{% endif %}
         <strong>{{ project.title }}</strong>
         {% if project.summary %}<p>{{ project.summary }}</p>{% endif %}
       </div>
